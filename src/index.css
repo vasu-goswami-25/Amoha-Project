@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* small helpers
+:root { --primary: #6334b9; }
+body { @apply font-sans bg-white text-gray-900; } */
+
+/* global body style
+body {
+  @apply bg-black text-white;
+} */
+
+@layer base {
+  body {
+    @apply bg-black text-white;
+  }
+}
