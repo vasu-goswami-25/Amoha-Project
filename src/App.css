@@ -1,42 +1,141 @@
-#root {
-  max-width: 1280px;
+
+/* Smooth scrolling between sections */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Body fallback (Tailwind sets bg/text, this is backup) */
+body {
+  background-color: #000; /* black */
+  color: #fff;            /* white */
+  font-family: 'Inter', ui-sans-serif, system-ui;
+  line-height: 1.5;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+a:hover {
+  color: #a78bfa; /* indigo-400 */
+}
+
+/* =========================
+   Containers & Sections
+========================= */
+.container {
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0 1rem;
+}
+
+.section {
+  padding: 4rem 1rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.section-subtitle {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: #9ca3af; /* gray-400 */
+  text-align: center;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* =========================
+   Buttons
+========================= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  border-radius: 0.75rem; /* rounded-xl */
+  padding: 0.6rem 1.25rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.btn-primary {
+  background-color: #6334b9;
+  color: white;
+}
+.btn-primary:hover {
+  background-color: #501fa6;
 }
 
+.btn-secondary {
+  background-color: white;
+  color: #111;
+}
+.btn-secondary:hover {
+  background-color: #e5e7eb; /* gray-200 */
+}
+
+/* =========================
+   Cards
+========================= */
 .card {
-  padding: 2em;
+  background-color: #111;
+  border: 1px solid #1f2937; /* gray-800 */
+  border-radius: 1rem;
+  padding: 1.25rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.45);
 }
 
-.read-the-docs {
-  color: #888;
+/* =========================
+   Progress Bars
+========================= */
+.progress-container {
+  background-color: #1f2937; /* gray-800 */
+  border-radius: 9999px; /* full */
+  height: 0.5rem;
+  overflow: hidden;
+}
+.progress-bar {
+  background-color: #6334b9;
+  height: 100%;
+  width: 0; /* JS will control width */
+  transition: width 0.4s ease-in-out;
+}
+
+/* =========================
+   Navbar / Footer
+========================= */
+header {
+  backdrop-filter: blur(8px);
+  background-color: rgba(0,0,0,0.75);
+  border-bottom: 1px solid #1f2937;
+}
+
+footer {
+  border-top: 1px solid #1f2937;
+  padding: 1.5rem;
+  text-align: center;
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+/* =========================
+   Utilities
+========================= */
+/* Example: for text gradient background */
+.text-gradient {
+  background: linear-gradient(to right, #f00, #00f); /* your gradient */
+  -webkit-background-clip: text;  /* for Safari and Chrome */
+  background-clip: text;          /* standard property for other browsers */
+  -webkit-text-fill-color: transparent; /* make text transparent for gradient */
+  color: transparent;             /* fallback */
 }
